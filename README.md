@@ -396,9 +396,9 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 
 ## 👨‍💻 Autores
 
-**Equipo de Desarrollo - Proyecto Aurelion**
+**Rodrigo Bombieri**
 
-- 📧 Email: contacto@aurelion.com
+- 📧 Email: rodrigosbombieri@gmail.com
 - 💼 LinkedIn: [Rodrigo Bombieri](https://www.linkedin.com/in/rodrigobombieri-dev/)
 - 🐙 GitHub: [@RodrigoBombieri](https://github.com/tu-usuario)
 
