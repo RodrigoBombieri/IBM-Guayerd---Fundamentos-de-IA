@@ -7,8 +7,8 @@
 ![Scikit-learn](https://img.shields.io/badge/Scikit--learn-1.3+-orange.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Status](https://img.shields.io/badge/Status-Active-success.svg)
-
-**Plataforma de análisis, visualización y predicción de ventas con Machine Learning**
+![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=flat&logo=powerbi&logoColor=black)
+**Plataforma de análisis, visualización y predicción de ventas con Machine Learning y Power BI**
 
 [Demo](#-demo) • [Características](#-características) • [Instalación](#-instalación) • [Uso](#-uso) • [Documentación](#-documentación)
 
@@ -45,7 +45,8 @@ Las tiendas tradicionales enfrentan dificultades para:
 - ❌ Predecir demanda futura para gestión de inventario
 - ❌ Segmentar clientes para estrategias personalizadas
 - ❌ Anticipar métodos de pago preferidos
-
+- ❌ Presentar insights ejecutivos de forma profesional
+  
 ### Solución
 
 ✅ Dashboards interactivos con métricas en tiempo real  
@@ -53,7 +54,7 @@ Las tiendas tradicionales enfrentan dificultades para:
 ✅ **3 modelos de ML** para predicción y clasificación  
 ✅ Segmentación automática de clientes (RFM)  
 ✅ Interfaz intuitiva sin código
-
+✅ **4 dashboards profesionales con Power BI**
 ---
 
 ## 🎬 Demo
@@ -120,7 +121,30 @@ La aplicación se abrirá automáticamente en `http://localhost:8501`
 - **Segmentos:** Champions, Leales, En Riesgo, Dormidos, Nuevos
 - **Uso:** Marketing personalizado y retención
 
+### 📊 Power BI Dashboards (Sprint 4)
+
+#### Dashboard General
+- **KPIs Principales:** Total Ventas ($2.65M), Ticket Promedio ($22.1K), Cantidad Vendidos (1,016K)
+- **Visualizaciones:** Evolución temporal, Cantidad por categoría, Filtro de medio de pago
+- **Uso:** Reportes ejecutivos y seguimiento de metas
+
+#### Dashboard de Clientes
+- **Métricas:** 67 clientes únicos, Top 10 clientes por importe, Ticket promedio por cliente
+- **Visualizaciones:** Importe por ciudad, Frecuencia vs Importe, Filtros dinámicos
+- **Uso:** Identificación de clientes VIP y oportunidades de venta
+
+#### Dashboard de Productos
+- **Insights:** Top 5 productos, Evolución por categoría, Mapa de calor ciudad×categoría
+- **Visualizaciones:** Barras, líneas temporales, tabla matriz interactiva
+- **Uso:** Gestión de inventario y planificación de compras
+
+#### Dashboard de Medios de Pago
+- **Distribución:** Efectivo (35.3%), QR (26.9%), Tarjeta (20.4%), Transferencia (17.4%)
+- **Visualizaciones:** Evolución mensual, Cantidad por categoría, Filtros cruzados
+- **Uso:** Optimización de métodos de cobro y flujo de caja
 ---
+
+
 
 ## 🛠️ Tecnologías
 
@@ -133,7 +157,7 @@ La aplicación se abrirá automáticamente en `http://localhost:8501`
 | **Data Science** | ![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white) ![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat&logo=numpy&logoColor=white) |
 | **Visualización** | ![Matplotlib](https://img.shields.io/badge/Matplotlib-11557c?style=flat) ![Seaborn](https://img.shields.io/badge/Seaborn-3776AB?style=flat) ![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=flat&logo=plotly&logoColor=white) |
 | **Machine Learning** | ![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931E?style=flat&logo=scikit-learn&logoColor=white) |
-
+| **Business Intelligence** | ![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=flat&logo=powerbi&logoColor=black) |
 </div>
 
 ---
@@ -144,7 +168,10 @@ La aplicación se abrirá automáticamente en `http://localhost:8501`
 
 - Python 3.8 o superior
 - pip (gestor de paquetes de Python)
-
+- Python 3.8 o superior
+- pip (gestor de paquetes de Python)
+- Power BI Desktop (opcional, para editar dashboards)
+  
 ### Paso a Paso
 
 1. **Clonar el repositorio**
@@ -170,9 +197,12 @@ pip install -r requirements.txt
 ```
 
 4. **Verificar estructura de datos**
-Asegúrate de tener el archivo CSV en:
+Asegúrate de tener los archivos necesarios:
 ```
 Base de datos/ventas_completas.csv
+Base de datos/ventas_completas.csv
+AurelionVentas_v2.pbix  # Archivo Power BI
+AurelionVentas_v2.pdf   # PDF del dashboard (opcional)
 ```
 
 5. **Ejecutar la aplicación**
@@ -180,6 +210,16 @@ Base de datos/ventas_completas.csv
 streamlit run app.py
 ```
 
+### Configuración de Power BI (Opcional)
+
+Para integrar Power BI Embedded:
+
+1. Publica tu reporte en Power BI Service
+2. Obtén la URL de incrustación
+3. Configura en `app.py`:
+```python
+powerbi_embed_url = "https://app.powerbi.com/view?r=TU_URL_AQUI"
+```
 ---
 
 ## 📖 Uso
@@ -290,6 +330,32 @@ labels = model.fit_predict(X_scaled)
 
 **Aplicación:** Campañas de marketing dirigidas
 
+#### 4. **SPRINT 4 - Power BI** 📊
+
+##### 📊 Dashboard General
+- **Visualiza:** KPIs principales, evolución temporal, cantidad por categoría
+- **Filtra por:** Medio de pago (Efectivo, QR, Tarjeta, Transferencia)
+- **Usa para:** Reportes mensuales, seguimiento de metas, detección de anomalías
+
+##### 👥 Dashboard de Clientes
+- **Visualiza:** Top 10 clientes, importe por ciudad, frecuencia vs importe
+- **Filtra por:** Categoría, mes, ciudad
+- **Usa para:** Identificar clientes VIP, expansión geográfica, campañas de frecuencia
+
+##### 📦 Dashboard de Productos
+- **Visualiza:** Top 5 productos, evolución por categoría, mapa de calor ciudad×categoría
+- **Filtra por:** Medio de pago
+- **Usa para:** Reabastecimiento, negociación con proveedores, estrategia de surtido
+
+##### 💳 Dashboard de Medios de Pago
+- **Visualiza:** Participación en ventas, evolución mensual, cantidad por categoría
+- **Análisis detallado:** Selecciona un medio de pago para insights profundos
+- **Usa para:** Optimización de métodos de cobro, inversión en infraestructura, negociación de comisiones
+
+##### 🔗 Dashboard Completo (Power BI Embed)
+- **Opción A:** Embeber dashboard publicado en Power BI Service
+- **Opción B:** Visualizar PDF del dashboard
+- **Funciones:** Refrescar, abrir en Power BI, descargar PDF
 ---
 
 ## 📁 Estructura del Proyecto
@@ -314,6 +380,8 @@ aurelion/
     ├── regression.py               # Predicción de ventas
     ├── classification.py           # Clasificación de pago
     └── clustering.py               # Segmentación RFM
+│
+└── AurelionVentas_v2.pbix          # Dashboard Power BI
 ```
 
 ---
@@ -327,6 +395,7 @@ aurelion/
 ✅ **Clientes VIP** segmentados (top 20% genera 60% ingresos)  
 ✅ **Predicción de inventario** con 67% de precisión  
 ✅ **Segmentación automática** en 4 grupos diferenciados  
+✅ **Dashboards ejecutivos** con 4 vistas especializadas
 
 ### Impacto en el Negocio
 
@@ -334,38 +403,40 @@ aurelion/
 - 🎯 Marketing personalizado por segmento
 - 💰 Reducción de quiebres de stock
 - 🔄 Mayor retención de clientes en riesgo
-
+- 📊 Presentaciones ejecutivas profesionales
+- 👔 Mejora en toma de decisiones estratégicas
 ---
 
 ## 🗺️ Roadmap
 
-### Versión Actual (v3.0)
+### Versión Actual (v4.0)
 - [x] EDA completo
 - [x] Visualizaciones interactivas
 - [x] Métricas de negocio
 - [x] 3 modelos de Machine Learning
 - [x] Segmentación RFM
+- [x] 4 dashboards profesionales con Power BI
+- [x] Integración Power BI Embedded
 
-### Próximas Versiones
-
-#### v3.1 - Mejoras de ML
+#### v4.1 - Mejoras de ML
 - [ ] Ampliar dataset a 12+ meses
 - [ ] Implementar XGBoost para mejor accuracy
 - [ ] Agregar features de hora del día
 - [ ] Cross-validation para modelos
 
-#### v3.2 - Automatización
+#### v4.2 - Automatización
 - [ ] Reentrenamiento automático mensual
 - [ ] Alertas por email (stock bajo, clientes en riesgo)
 - [ ] API REST para integraciones
 - [ ] Dashboard para mobile
+- [ ] Automatización de reportes Power BI
 
-#### v4.0 - Avanzado
+#### v5.0 - Avanzado
 - [ ] Predicción de churn (abandono de clientes)
 - [ ] Sistema de recomendación de productos
 - [ ] Análisis de sentimiento de reviews
 - [ ] Integración con sistemas ERP
-
+- [ ] Power BI con datos en tiempo real
 ---
 
 ## 🤝 Contribuir
