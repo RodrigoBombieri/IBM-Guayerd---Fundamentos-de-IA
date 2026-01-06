@@ -499,6 +499,9 @@ Si tienes preguntas o necesitas ayuda:
 
 Hecho con 🪐 por el equipo de Aurelion
 
+# Certificado de finalización del curso
+<img width="2000" height="1414" alt="Rodrigo Sebastián Bombieri" src="https://github.com/user-attachments/assets/b1ef435a-b019-4719-acbd-34b3a9da29c8" />
+
 [⬆ Volver arriba](#-aurelion---sistema-inteligente-de-análisis-de-ventas)
 
 </div>
